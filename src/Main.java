@@ -10,21 +10,19 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         char input = ' ';
         int missingLetter = 0;
-        int miss = 0;
         char[] guessingWord = {'_', '_', '_', '_', '_',};
 
         ArrayList<String> listOfWords = new ArrayList<>(Arrays.asList("Alarm", "Apple", "Arrow", "Basin", "Bench", "Bible", "Blade", "Blank", "Block", "Board", "Books", "Booth", "Bowls", "Bread", "Brush", "Chair", "Charm", "Check", "Chess", "Chime", "Chord", "Clock", "Clasp", "Clips", "Clock", "Coast", "Coins", "Comb", "Coral", "Crisp", "Cross", "Crown", "Curve", "Dance", "Darts", "Dates", "Decks", "Diode", "Discs", "Dishes", "Dolls", "Donut", "Drums", "Dress", "Drill", "Drink", "Drops", "Duster", "Easel", "Eggs", "Elbow", "Erase", "Error", "Fable", "Fairy", "Falls", "False", "Fence", "Ficus", "Field", "Film", "Flags", "Flask", "Fleet", "Flute", "Folds", "Force", "Frame", "Fruit", "Games", "Ghost", "Gifts", "Glass", "Gloves", "Gourd", "Grape", "Grill", "Grind", "Group", "Guest", "Guitar", "Habit", "Halos", "Hands", "Harps", "Heart", "Herbs", "Hoops", "Hotel", "House", "Icicle", "Inked", "Jolly", "Juice", "Kites", "Knife", "Knobs", "Lamps", "Lanes", "Latch"));
         int randomWord = new Random().nextInt(listOfWords.size());
 
-        System.out.println(listOfWords.get(randomWord));
+        System.out.println("Answer: " + listOfWords.get(randomWord));
         String[] split = listOfWords.get(randomWord).split("");
 
-        for (int i = 0; i < guessingWord.length; i++) {
-            System.out.print(guessingWord[i] + "");
+        for (char c : guessingWord) {
+            System.out.print(c + "");
             missingLetter++;
         }
         System.out.println();
-
 
         while (missingLetter > 0) {
             System.out.println("Missing Letters: " + missingLetter);
@@ -51,8 +49,8 @@ public class Main {
                     guessingWord[i] = '_';
                 }
             }
-            for (int i = 0; i < guessingWord.length; i++) {
-                System.out.print(guessingWord[i] + "");
+            for (char c : guessingWord) {
+                System.out.print(c + "");
             }
             System.out.println();
         }
